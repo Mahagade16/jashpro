@@ -1,0 +1,827 @@
+<!doctype html>
+
+
+    
+    
+    All-In-One Web Tools | 100+ Free Online Tools
+    
+    <style>
+        :root {
+            --primary-color: #4a6bff;
+            --secondary-color: #6c757d;
+            --dark-color: #343a40;
+            --light-color: #f8f9fa;
+            --success-color: #28a745;
+            --danger-color: #dc3545;
+            --warning-color: #ffc107;
+            --info-color: #17a2b8;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--dark-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 20px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 30px;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 25px;
+        }
+        
+        .search-box {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .search-box input {
+            width: 100%;
+            padding: 12px 20px;
+            border-radius: 50px;
+            border: none;
+            font-size: 1rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .search-box button {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 7px 15px;
+            cursor: pointer;
+        }
+        
+        .categories {
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            display: inline-block;
+            background-color: #f5f7fa;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+            color: var(--dark-color);
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background-color: #ddd;
+            z-index: 0;
+        }
+        
+        .category-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            padding: 25px;
+            margin-bottom: 30px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .category-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .category-icon {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(74, 107, 255, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: var(--primary-color);
+            font-size: 24px;
+        }
+        
+        .category-title {
+            font-size: 1.3rem;
+            color: var(--dark-color);
+        }
+        
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        
+        .tool-item {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 12px 15px;
+            transition: all 0.3s;
+        }
+        
+        .tool-item:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .tool-item a {
+            color: inherit;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .tool-icon {
+            margin-right: 10px;
+            font-size: 18px;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 40px 0 20px;
+            margin-top: 50px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #adb5bd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #adb5bd;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+            
+            .nav-links {
+                margin-top: 15px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .tools-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-links li {
+                margin: 5px 10px;
+            }
+            
+            .hero {
+                padding: 40px 0;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">Web<span>Tools</span></a>
+                <ul class="nav-links">
+                    <li><a href="#image-tools">Image Tools</a></li>
+                    <li><a href="#seo-tools">SEO Tools</a></li>
+                    <li><a href="#text-tools">Text Tools</a></li>
+                    <li><a href="#developer-tools">Developer Tools</a></li>
+                    <li><a href="#math-tools">Math Tools</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>100+ Free Online Web Tools</h1>
+            <p>All the tools you need in one place - free, fast, and easy to use. No installation required!</p>
+            <div class="search-box">
+                <input type="text" placeholder="Search for tools..." />
+                <button><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </section>
+    
+    <div class="container">
+        <section class="categories">
+            <div class="section-title">
+                <h2>Browse Tools by Category</h2>
+            </div>
+            
+            <div id="image-tools" class="category-card">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-image"></i>
+                    </div>
+                    <h3 class="category-title">Image Tools</h3>
+                </div>
+                <div class="tools-grid">
+                    <div class="tool-item">
+                        <a href="https://onlineconvertfree.com/convert-format/jpg-to-png/" target="_blank"><i class="fas fa-file-image tool-icon"></i> Image to PNG Converter</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://image.online-convert.com/convert-to-jpg" target="_blank"><i class="fas fa-file-image tool-icon"></i> Image to JPG Converter</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.iloveimg.com/resize-image" target="_blank"><i class="fas fa-expand-alt tool-icon"></i> Image Resizer</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://tinypng.com/" target="_blank"><i class="fas fa-compress-alt tool-icon"></i> Image Compressor</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.befunky.com/create/crop-photo/" target="_blank"><i class="fas fa-crop tool-icon"></i> Image Cropper</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.base64-image.de/" target="_blank"><i class="fas fa-code tool-icon"></i> Convert Image to Base64</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://ezgif.com/webp-to-png" target="_blank"><i class="fas fa-exchange-alt tool-icon"></i> Convert WebP to PNG</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://ezgif.com/maker" target="_blank"><i class="fas fa-film tool-icon"></i> GIF Maker</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.qr-code-generator.com/" target="_blank"><i class="fas fa-qrcode tool-icon"></i> QR Code Generator</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.screentopdf.com/" target="_blank"><i class="fas fa-file-pdf tool-icon"></i> Screenshot to PDF Converter</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="seo-tools" class="category-card">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-search-dollar"></i>
+                    </div>
+                    <h3 class="category-title">SEO Tools</h3>
+                </div>
+                <div class="tools-grid">
+                    <div class="tool-item">
+                        <a href="https://www.seoptimer.com/meta-tag-generator" target="_blank"><i class="fas fa-tags tool-icon"></i> Meta Tag Generator</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://smallseotools.com/keyword-density-checker/" target="_blank"><i class="fas fa-key tool-icon"></i> Keyword Density Checker</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.xml-sitemaps.com/" target="_blank"><i class="fas fa-sitemap tool-icon"></i> Sitemap Generator</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.robotstxt.org/generator.html" target="_blank"><i class="fas fa-robot tool-icon"></i> Robots.txt Generator</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.google.com/search?q=site:yoursite.com" target="_blank"><i class="fab fa-google tool-icon"></i> Google Index Checker</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://moz.com/domain-analysis" target="_blank"><i class="fas fa-chart-line tool-icon"></i> Domain Authority Checker</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://ahrefs.com/backlink-checker" target="_blank"><i class="fas fa-link tool-icon"></i> Backlink Checker</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://pagespeed.web.dev/" target="_blank"><i class="fas fa-tachometer-alt tool-icon"></i> Page Speed Checker</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.xml-sitemaps.com/validate-xml-sitemap.html" target="_blank"><i class="fas fa-check-circle tool-icon"></i> XML Sitemap Validator</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://search.google.com/test/mobile-friendly" target="_blank"><i class="fas fa-mobile-alt tool-icon"></i> Mobile-Friendly Test</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="text-tools" class="category-card">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-font"></i>
+                    </div>
+                    <h3 class="category-title">Text Tools</h3>
+                </div>
+                <div class="tools-grid">
+                    <div class="tool-item">
+                        <a href="https://wordcounter.net/" target="_blank"><i class="fas fa-list-ol tool-icon"></i> Word Counter</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.charactercountonline.com/" target="_blank"><i class="fas fa-text-width tool-icon"></i> Character Counter</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://convertcase.net/" target="_blank"><i class="fas fa-text-height tool-icon"></i> Case Converter</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.grammarly.com/plagiarism-checker" target="_blank"><i class="fas fa-search tool-icon"></i> Plagiarism Checker</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.grammarly.com/" target="_blank"><i class="fas fa-spell-check tool-icon"></i> Grammar Checker</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.naturalreaders.com/online/" target="_blank"><i class="fas fa-volume-up tool-icon"></i> Text-to-Speech</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://speechtexter.com/" target="_blank"><i class="fas fa-microphone tool-icon"></i> Speech-to-Text</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.url-encode-decode.com/" target="_blank"><i class="fas fa-percent tool-icon"></i> URL Encoder & Decoder</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.fancytextpro.com/" target="_blank"><i class="fas fa-paint-brush tool-icon"></i> Fancy Text Generator</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.randomtextgenerator.com/" target="_blank"><i class="fas fa-random tool-icon"></i> Random Text Generator</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="developer-tools" class="category-card">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="category-title">Developer Tools</h3>
+                </div>
+                <div class="tools-grid">
+                    <div class="tool-item">
+                        <a href="https://jsonformatter.curiousconcept.com/" target="_blank"><i class="fas fa-brackets-curly tool-icon"></i> JSON Formatter</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.browserling.com/tools/html-to-markdown" target="_blank"><i class="fab fa-html5 tool-icon"></i> HTML to Markdown Converter</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.cleancss.com/css-minify/" target="_blank"><i class="fab fa-css3-alt tool-icon"></i> CSS Minifier</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.toptal.com/developers/javascript-minifier" target="_blank"><i class="fab fa-js tool-icon"></i> JavaScript Minifier</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.sqlformat.org/" target="_blank"><i class="fas fa-database tool-icon"></i> SQL Formatter</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.htaccessredirect.net/" target="_blank"><i class="fas fa-directions tool-icon"></i> HTACCESS Redirect Generator</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://markdowntohtml.com/" target="_blank"><i class="fab fa-markdown tool-icon"></i> Markdown to HTML Converter</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://htmlcolorcodes.com/color-picker/" target="_blank"><i class="fas fa-palette tool-icon"></i> Color Code Picker</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.base64encode.org/" target="_blank"><i class="fas fa-lock tool-icon"></i> Base64 Encoder & Decoder</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.iplocation.net/" target="_blank"><i class="fas fa-network-wired tool-icon"></i> IP Address Lookup</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="math-tools" class="category-card">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3 class="category-title">Math & Calculators</h3>
+                </div>
+                <div class="tools-grid">
+                    <div class="tool-item">
+                        <a href="https://www.calculator.net/percent-calculator.html" target="_blank"><i class="fas fa-percentage tool-icon"></i> Percentage Calculator</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.calculator.net/age-calculator.html" target="_blank"><i class="fas fa-birthday-cake tool-icon"></i> Age Calculator</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.calculator.net/bmi-calculator.html" target="_blank"><i class="fas fa-weight tool-icon"></i> BMI Calculator</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.calculator.net/loan-calculator.html" target="_blank"><i class="fas fa-money-bill-wave tool-icon"></i> Loan EMI Calculator</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.calculator.net/scientific-calculator.html" target="_blank"><i class="fas fa-square-root-alt tool-icon"></i> Scientific Calculator</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.calculator.net/discount-calculator.html" target="_blank"><i class="fas fa-tags tool-icon"></i> Discount Calculator</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.xe.com/currencyconverter/" target="_blank"><i class="fas fa-exchange-alt tool-icon"></i> Currency Converter</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.timeanddate.com/worldclock/converter.html" target="_blank"><i class="fas fa-globe tool-icon"></i> Time Zone Converter</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.rapidtables.com/convert/number/binary-to-decimal.html" target="_blank"><i class="fas fa-binary tool-icon"></i> Binary to Decimal Converter</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.calculator.net/tip-calculator.html" target="_blank"><i class="fas fa-utensils tool-icon"></i> Tip Calculator</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="category-card">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-ruler-combined"></i>
+                    </div>
+                    <h3 class="category-title">Unit Converters</h3>
+                </div>
+                <div class="tools-grid">
+                    <div class="tool-item">
+                        <a href="https://www.unitconverters.net/length-converter.html" target="_blank"><i class="fas fa-ruler tool-icon"></i> Length Converter</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.unitconverters.net/weight-and-mass-converter.html" target="_blank"><i class="fas fa-weight-hanging tool-icon"></i> Weight Converter</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.unitconverters.net/speed-converter.html" target="_blank"><i class="fas fa-tachometer-alt tool-icon"></i> Speed Converter</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.unitconverters.net/temperature-converter.html" target="_blank"><i class="fas fa-thermometer-half tool-icon"></i> Temperature Converter</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.unitconverters.net/volume-converter.html" target="_blank"><i class="fas fa-flask tool-icon"></i> Volume Converter</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.unitconverters.net/data-storage-converter.html" target="_blank"><i class="fas fa-hdd tool-icon"></i> Data Storage Converter</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.unitconverters.net/energy-converter.html" target="_blank"><i class="fas fa-bolt tool-icon"></i> Energy Converter</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.unitconverters.net/pressure-converter.html" target="_blank"><i class="fas fa-tachometer-alt tool-icon"></i> Pressure Converter</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.unitconverters.net/fuel-converter.html" target="_blank"><i class="fas fa-gas-pump tool-icon"></i> Fuel Efficiency Converter</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.unitconverters.net/angle-converter.html" target="_blank"><i class="fas fa-angle-double-right tool-icon"></i> Angle Converter</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="category-card">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3 class="category-title">Security & Encryption Tools</h3>
+                </div>
+                <div class="tools-grid">
+                    <div class="tool-item">
+                        <a href="https://www.md5hashgenerator.com/" target="_blank"><i class="fas fa-hashtag tool-icon"></i> MD5 Hash Generator</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://emn178.github.io/online-tools/sha256.html" target="_blank"><i class="fas fa-hashtag tool-icon"></i> SHA256 Hash Generator</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://passwordsgenerator.net/" target="_blank"><i class="fas fa-key tool-icon"></i> Password Generator</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.random.org/strings/" target="_blank"><i class="fas fa-random tool-icon"></i> Random String Generator</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://bitly.com/" target="_blank"><i class="fas fa-link tool-icon"></i> URL Shortener</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.iplocation.net/" target="_blank"><i class="fas fa-map-marker-alt tool-icon"></i> IP Geolocation Finder</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.sslshopper.com/ssl-checker.html" target="_blank"><i class="fas fa-lock tool-icon"></i> SSL Certificate Checker</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://whois.domaintools.com/" target="_blank"><i class="fas fa-search tool-icon"></i> Whois Lookup</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.webconfs.com/http-header-check.php" target="_blank"><i class="fas fa-code tool-icon"></i> HTTP Headers Checker</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.privacypolicies.com/generator/" target="_blank"><i class="fas fa-user-shield tool-icon"></i> Privacy Policy Generator</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="category-card">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-share-alt"></i>
+                    </div>
+                    <h3 class="category-title">Social Media Tools</h3>
+                </div>
+                <div class="tools-grid">
+                    <div class="tool-item">
+                        <a href="https://www.get-youtube-thumbnail.com/" target="_blank"><i class="fab fa-youtube tool-icon"></i> YouTube Thumbnail Downloader</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://downloadgram.com/" target="_blank"><i class="fab fa-instagram tool-icon"></i> Instagram Photo Downloader</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.savetweetvid.com/" target="_blank"><i class="fab fa-twitter tool-icon"></i> Twitter Video Downloader</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://fbdown.net/" target="_blank"><i class="fab fa-facebook tool-icon"></i> Facebook Video Downloader</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://snaptik.app/" target="_blank"><i class="fab fa-tiktok tool-icon"></i> TikTok Video Downloader</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.tubebuddy.com/" target="_blank"><i class="fab fa-youtube tool-icon"></i> YouTube Tags Extractor</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.all-hashtag.com/hashtag-generator.php" target="_blank"><i class="fas fa-hashtag tool-icon"></i> Hashtag Generator</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.postplanner.com/social-media-post-ideas-generator/" target="_blank"><i class="fas fa-share-alt tool-icon"></i> Social Media Post Generator</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://getemoji.com/" target="_blank"><i class="far fa-smile tool-icon"></i> Emoji Keyboard</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.lettercount.com/" target="_blank"><i class="fab fa-twitter tool-icon"></i> Twitter Character Counter</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="category-card">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-random"></i>
+                    </div>
+                    <h3 class="category-title">Miscellaneous Tools</h3>
+                </div>
+                <div class="tools-grid">
+                    <div class="tool-item">
+                        <a href="https://barcode.tec-it.com/en" target="_blank"><i class="fas fa-barcode tool-icon"></i> Barcode Generator</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://imgflip.com/memegenerator" target="_blank"><i class="fas fa-grin-squint-tears tool-icon"></i> Meme Generator</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.resume.com/" target="_blank"><i class="fas fa-file-alt tool-icon"></i> Resume Builder</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.invoice-generator.com/" target="_blank"><i class="fas fa-file-invoice-dollar tool-icon"></i> Invoice Generator</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.name-generator.org.uk/business/" target="_blank"><i class="fas fa-store tool-icon"></i> Business Name Generator</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.random.org/lottery/" target="_blank"><i class="fas fa-ticket-alt tool-icon"></i> Lottery Number Generator</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://justflipacoin.com/" target="_blank"><i class="fas fa-coins tool-icon"></i> Flip a Coin Simulator</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.random.org/" target="_blank"><i class="fas fa-dice tool-icon"></i> Random Number Generator</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.random.org/dice/" target="_blank"><i class="fas fa-dice-five tool-icon"></i> Dice Roller Simulator</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.speedtest.net/" target="_blank"><i class="fas fa-tachometer-alt tool-icon"></i> Internet Speed Test</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.canva.com/planners/templates/" target="_blank"><i class="fas fa-calendar-alt tool-icon"></i> Daily Planner Creator</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.canva.com/invitations/templates/wedding/" target="_blank"><i class="fas fa-ring tool-icon"></i> Wedding Invitation Generator</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.plot-generator.org.uk/" target="_blank"><i class="fas fa-book tool-icon"></i> Story Plot Generator</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://bookcreator.com/" target="_blank"><i class="fas fa-book-open tool-icon"></i> E-book Creator</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://chat.openai.com/" target="_blank"><i class="fas fa-robot tool-icon"></i> AI Chatbot Demo</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.iplocation.net/" target="_blank"><i class="fas fa-map-marker-alt tool-icon"></i> IP Address Tracker</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.fakeaddressgenerator.com/" target="_blank"><i class="fas fa-map-marked-alt tool-icon"></i> Fake Address Generator</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.omnicalculator.com/everyday-life/electricity-cost" target="_blank"><i class="fas fa-bolt tool-icon"></i> Calculator for Electric Bills</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.timeanddate.com/date/leapyear.html" target="_blank"><i class="fas fa-calendar-check tool-icon"></i> Leap Year Checker</a>
+                    </div>
+                    <div class="tool-item">
+                        <a href="https://www.numerology.com/numerology-calculators/name" target="_blank"><i class="fas fa-magic tool-icon"></i> Name to Numerology Calculator</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>WebTools</h3>
+                    <p>Your one-stop destination for all online tools. Free, fast, and easy to use tools for developers, designers, marketers, and general users.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#image-tools">Image Tools</a></li>
+                        <li><a href="#seo-tools">SEO Tools</a></li>
+                        <li><a href="#text-tools">Text Tools</a></li>
+                        <li><a href="#developer-tools">Developer Tools</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Popular Tools</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://tinypng.com/" target="_blank">Image Compressor</a></li>
+                        <li><a href="https://www.qr-code-generator.com/" target="_blank">QR Code Generator</a></li>
+                        <li><a href="https://wordcounter.net/" target="_blank">Word Counter</a></li>
+                        <li><a href="https://passwordsgenerator.net/" target="_blank">Password Generator</a></li>
+                        <li><a href="https://www.xe.com/currencyconverter/" target="_blank">Currency Converter</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Feedback</a></li>
+                        <li><a href="#">Report a Bug</a></li>
+                        <li><a href="#">Request a Tool</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 WebTools. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Simple search functionality
+        document.querySelector('.search-box input').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const toolItems = document.querySelectorAll('.tool-item');
+            
+            toolItems.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                if (text.includes(searchTerm)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+</!doctype>
